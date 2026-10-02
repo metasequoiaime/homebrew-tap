@@ -1,0 +1,41 @@
+# Casks/msime.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
+cask "msime" do
+  version "0.51.1"
+  sha256 "8bb1644df7ae34e1dda1cc6c017d596877e7f35b3528eb1e9b07a9eca93ec9ef"
+
+  url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-#{version}-universal.dmg"
+  name "MSIME"
+  name "水杉输入法"
+  desc "Chinese input method for pinyin, shuangpin and wubi"
+  homepage "https://github.com/metasequoiaime/msime"
+
+  livecheck do
+    url :url
+    regex(/^macos-v(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
+  end
+
+  depends_on macos: :ventura
+
+  app "MSIME.app"
+  # The MCP server AI assistants run, on PATH for those configured from a terminal.
+  binary "#{appdir}/MSIME.app/Contents/MacOS/msime-mcp"
+
+  # The settings app copies the input method here on its first launch.
+  uninstall quit:   ["app.msime.macos", "app.msime.inputmethod.MetasequoiaIME"],
+            delete: "~/Library/Input Methods/水杉输入法.app"
+
+  zap trash: [
+    "~/Library/Application Support/app.msime.macos",
+    "~/Library/Caches/app.msime.macos",
+    "~/Library/Preferences/app.msime.macos.plist",
+    "~/Library/Preferences/app.msime.inputmethod.MetasequoiaIME.plist",
+    "~/Library/Saved Application State/app.msime.macos.savedState",
+    "~/Library/WebKit/app.msime.macos",
+  ]
+
+  caveats <<~EOS
+    Open MSIME once to finish installing: it adds 水杉输入法 to your input sources.
+    On a Mac where it was never installed, log out and back in after that before it appears.
+  EOS
+end
