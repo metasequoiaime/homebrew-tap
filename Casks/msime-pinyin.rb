@@ -26,8 +26,8 @@ cask "msime-pinyin" do
   zap trash: [
     "~/Library/Application Support/app.msime.macos.pinyin",
     "~/Library/Caches/app.msime.macos.pinyin",
-    "~/Library/Preferences/app.msime.macos.pinyin.plist",
     "~/Library/Preferences/app.msime.inputmethod.pinyin.plist",
+    "~/Library/Preferences/app.msime.macos.pinyin.plist",
     "~/Library/Saved Application State/app.msime.macos.pinyin.savedState",
     "~/Library/WebKit/app.msime.macos.pinyin",
   ]

@@ -26,8 +26,8 @@ cask "msime-tibetan" do
   zap trash: [
     "~/Library/Application Support/app.msime.macos.tibetan",
     "~/Library/Caches/app.msime.macos.tibetan",
-    "~/Library/Preferences/app.msime.macos.tibetan.plist",
     "~/Library/Preferences/app.msime.inputmethod.tibetan.plist",
+    "~/Library/Preferences/app.msime.macos.tibetan.plist",
     "~/Library/Saved Application State/app.msime.macos.tibetan.savedState",
     "~/Library/WebKit/app.msime.macos.tibetan",
   ]

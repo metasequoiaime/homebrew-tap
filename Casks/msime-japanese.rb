@@ -26,8 +26,8 @@ cask "msime-japanese" do
   zap trash: [
     "~/Library/Application Support/app.msime.macos.japanese",
     "~/Library/Caches/app.msime.macos.japanese",
-    "~/Library/Preferences/app.msime.macos.japanese.plist",
     "~/Library/Preferences/app.msime.inputmethod.japanese.plist",
+    "~/Library/Preferences/app.msime.macos.japanese.plist",
     "~/Library/Saved Application State/app.msime.macos.japanese.savedState",
     "~/Library/WebKit/app.msime.macos.japanese",
   ]

@@ -26,8 +26,8 @@ cask "msime-wubi" do
   zap trash: [
     "~/Library/Application Support/app.msime.macos.wubi",
     "~/Library/Caches/app.msime.macos.wubi",
-    "~/Library/Preferences/app.msime.macos.wubi.plist",
     "~/Library/Preferences/app.msime.inputmethod.wubi.plist",
+    "~/Library/Preferences/app.msime.macos.wubi.plist",
     "~/Library/Saved Application State/app.msime.macos.wubi.savedState",
     "~/Library/WebKit/app.msime.macos.wubi",
   ]

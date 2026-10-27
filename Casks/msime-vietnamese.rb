@@ -26,8 +26,8 @@ cask "msime-vietnamese" do
   zap trash: [
     "~/Library/Application Support/app.msime.macos.vietnamese",
     "~/Library/Caches/app.msime.macos.vietnamese",
-    "~/Library/Preferences/app.msime.macos.vietnamese.plist",
     "~/Library/Preferences/app.msime.inputmethod.vietnamese.plist",
+    "~/Library/Preferences/app.msime.macos.vietnamese.plist",
     "~/Library/Saved Application State/app.msime.macos.vietnamese.savedState",
     "~/Library/WebKit/app.msime.macos.vietnamese",
   ]
