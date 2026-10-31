@@ -1,7 +1,7 @@
 # Casks/msime-tibetan.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-tibetan" do
-  version "0.55.0"
-  sha256 "5a638547464aa01461c2800ebcaa127c7544ae62041bdcfe9ff87745459374cf"
+  version "0.56.0"
+  sha256 "f93a73f42edaa13c7722e45848c4ad0f2bab10b54b3c0b39adc95d32cde05438"
 
   url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-tibetan-#{version}-universal.dmg"
   name "MSIME Tibetan"
@@ -26,8 +26,8 @@ cask "msime-tibetan" do
   zap trash: [
     "~/Library/Application Support/app.msime.macos.tibetan",
     "~/Library/Caches/app.msime.macos.tibetan",
-    "~/Library/Preferences/app.msime.macos.tibetan.plist",
     "~/Library/Preferences/app.msime.inputmethod.tibetan.plist",
+    "~/Library/Preferences/app.msime.macos.tibetan.plist",
     "~/Library/Saved Application State/app.msime.macos.tibetan.savedState",
     "~/Library/WebKit/app.msime.macos.tibetan",
   ]

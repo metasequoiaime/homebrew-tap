@@ -1,7 +1,7 @@
 # Casks/msime-japanese.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-japanese" do
-  version "0.55.0"
-  sha256 "0a21d62f17d5a35c5f590422382a414bbafc3f9c9b1662bea19b088aaf3ca7f8"
+  version "0.56.0"
+  sha256 "f0f3fc62a4291b04331254d9f3ca873797bd4b5a33a001034b6de954aef5d20d"
 
   url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-japanese-#{version}-universal.dmg"
   name "MSIME Japanese"
@@ -26,8 +26,8 @@ cask "msime-japanese" do
   zap trash: [
     "~/Library/Application Support/app.msime.macos.japanese",
     "~/Library/Caches/app.msime.macos.japanese",
-    "~/Library/Preferences/app.msime.macos.japanese.plist",
     "~/Library/Preferences/app.msime.inputmethod.japanese.plist",
+    "~/Library/Preferences/app.msime.macos.japanese.plist",
     "~/Library/Saved Application State/app.msime.macos.japanese.savedState",
     "~/Library/WebKit/app.msime.macos.japanese",
   ]

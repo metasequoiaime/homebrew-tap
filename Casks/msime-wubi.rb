@@ -1,7 +1,7 @@
 # Casks/msime-wubi.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-wubi" do
-  version "0.55.0"
-  sha256 "2d8c91590c896380c8c15771172a7da0940f318cd5d0331bfd5ea083cb92230f"
+  version "0.56.0"
+  sha256 "13dc02f3d08e76d3bfbd069a1dd65c6ccc05168fcde7847e201e858ab32db5b6"
 
   url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-wubi-#{version}-universal.dmg"
   name "MSIME Wubi"
@@ -26,8 +26,8 @@ cask "msime-wubi" do
   zap trash: [
     "~/Library/Application Support/app.msime.macos.wubi",
     "~/Library/Caches/app.msime.macos.wubi",
-    "~/Library/Preferences/app.msime.macos.wubi.plist",
     "~/Library/Preferences/app.msime.inputmethod.wubi.plist",
+    "~/Library/Preferences/app.msime.macos.wubi.plist",
     "~/Library/Saved Application State/app.msime.macos.wubi.savedState",
     "~/Library/WebKit/app.msime.macos.wubi",
   ]
