@@ -1,9 +1,9 @@
 # Casks/msime-wubi.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-wubi" do
-  version "0.56.1"
-  sha256 "ac1279b391ccfe63aab15bd2b2ed64567f42cf31878706f449884426d1fef7ff"
+  version "0.57.0"
+  sha256 "173366b85cccd1c2be2768b2a7bf4ea35200012c6aa640413f52393f5ab50c20"
 
-  url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-wubi-#{version}-universal.dmg"
+  url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-wubi-#{version}-universal.pkg"
   name "MSIME Wubi"
   name "水杉五笔"
   desc "Chinese input method for wubi"
@@ -15,13 +15,20 @@ cask "msime-wubi" do
     strategy :github_releases
   end
 
+  # 设置应用由 Sparkle 就地更新，brew 不必每个版本都重装它（重装时 uninstall 会先删掉输入法）。
+  auto_updates true
   depends_on macos: :ventura
 
-  app "MSIME Wubi.app"
+  # 安装包把 MSIME Wubi.app 装进 /Applications，要管理员密码：brew 以 sudo 运行 installer。
+  pkg "msime-macos-wubi-#{version}-universal.pkg"
 
-  # The settings app copies the input method here on its first launch.
-  uninstall quit:   ["app.msime.macos.wubi", "app.msime.inputmethod.wubi"],
-            delete: "~/Library/Input Methods/水杉五笔.app"
+  # 设置应用第一次启动时把输入法装进 ~/Library/Input Methods。应用除了按回执卸载还要显式删除：Sparkle 更新过之后，磁盘上的 bundle 和回执对不上。
+  uninstall quit:    ["app.msime.macos.wubi", "app.msime.inputmethod.wubi"],
+            pkgutil: "app.msime.macos.wubi.pkg",
+            delete:  [
+              "/Applications/MSIME Wubi.app",
+              "~/Library/Input Methods/水杉五笔.app",
+            ]
 
   zap trash: [
     "~/Library/Application Support/app.msime.macos.wubi",
@@ -33,6 +40,7 @@ cask "msime-wubi" do
   ]
 
   caveats <<~EOS
+    Installing and upgrading need an administrator password.
     Open MSIME Wubi once to finish installing: it adds 水杉五笔 to your input sources.
     On a Mac where it was never installed, log out and back in after that before it appears.
   EOS

@@ -1,9 +1,9 @@
 # Casks/msime-pinyin.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-pinyin" do
-  version "0.56.1"
-  sha256 "b64b302c0633fd1ffa2526880d765309f9fa74c487f05957e86ce743922770c9"
+  version "0.57.0"
+  sha256 "1028eef83df186b964046b62008a1f1137c8ae86148586ffae84975904a07208"
 
-  url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-pinyin-#{version}-universal.dmg"
+  url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-pinyin-#{version}-universal.pkg"
   name "MSIME Pinyin"
   name "水杉拼音"
   desc "Chinese input method for pinyin and shuangpin"
@@ -15,13 +15,20 @@ cask "msime-pinyin" do
     strategy :github_releases
   end
 
+  # 设置应用由 Sparkle 就地更新，brew 不必每个版本都重装它（重装时 uninstall 会先删掉输入法）。
+  auto_updates true
   depends_on macos: :ventura
 
-  app "MSIME Pinyin.app"
+  # 安装包把 MSIME Pinyin.app 装进 /Applications，要管理员密码：brew 以 sudo 运行 installer。
+  pkg "msime-macos-pinyin-#{version}-universal.pkg"
 
-  # The settings app copies the input method here on its first launch.
-  uninstall quit:   ["app.msime.macos.pinyin", "app.msime.inputmethod.pinyin"],
-            delete: "~/Library/Input Methods/水杉拼音.app"
+  # 设置应用第一次启动时把输入法装进 ~/Library/Input Methods。应用除了按回执卸载还要显式删除：Sparkle 更新过之后，磁盘上的 bundle 和回执对不上。
+  uninstall quit:    ["app.msime.macos.pinyin", "app.msime.inputmethod.pinyin"],
+            pkgutil: "app.msime.macos.pinyin.pkg",
+            delete:  [
+              "/Applications/MSIME Pinyin.app",
+              "~/Library/Input Methods/水杉拼音.app",
+            ]
 
   zap trash: [
     "~/Library/Application Support/app.msime.macos.pinyin",
@@ -33,6 +40,7 @@ cask "msime-pinyin" do
   ]
 
   caveats <<~EOS
+    Installing and upgrading need an administrator password.
     Open MSIME Pinyin once to finish installing: it adds 水杉拼音 to your input sources.
     On a Mac where it was never installed, log out and back in after that before it appears.
   EOS
