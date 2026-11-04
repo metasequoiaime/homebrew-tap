@@ -1,7 +1,7 @@
 # Casks/msime-vietnamese.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-vietnamese" do
-  version "0.57.0"
-  sha256 "6fcbfcab182f51533ef78c6510ab31d7b3862ef85a618ee0d9dc4370755598c3"
+  version "0.58.0"
+  sha256 "cad1cf268ba44be0d8dabfb9b3a8afd1df2e1b65acdb6344466e652ac2b06597"
 
   url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-vietnamese-#{version}-universal.pkg"
   name "MSIME Vietnamese"
