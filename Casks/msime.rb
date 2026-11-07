@@ -1,7 +1,7 @@
 # Casks/msime.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime" do
-  version "0.58.0"
-  sha256 "4e213df6fb06581fb26ed5c4aae00d834296b3cb0f45d77235cfe7e075a7d56b"
+  version "0.59.1"
+  sha256 "134e875ef14b903dde6ad95c0ecae975d339b0487fe39e8c07903f60deffcf0a"
 
   url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-#{version}-universal.pkg"
   name "MSIME"

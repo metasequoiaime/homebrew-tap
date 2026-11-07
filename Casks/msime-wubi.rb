@@ -1,7 +1,7 @@
 # Casks/msime-wubi.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-wubi" do
-  version "0.58.0"
-  sha256 "67b04e30718d9e75b8340aff17b6e90e88a20f892954aa0a9807f1d9372a0b18"
+  version "0.59.1"
+  sha256 "12f1e5e10e482bfc59e2efbcdba449d7a61e41fc5cf6621165589f031ac6c52f"
 
   url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-wubi-#{version}-universal.pkg"
   name "MSIME Wubi"
