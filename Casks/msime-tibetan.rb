@@ -1,7 +1,7 @@
 # Casks/msime-tibetan.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-tibetan" do
-  version "0.59.2"
-  sha256 "873f3a683558376a3e2559961427132d4716ac0c37578b3e36c9bc3c08ae2a14"
+  version "0.59.3"
+  sha256 "252f672d8388197cd4aa5ab451d8efac67c3428923ca67300ebe397d0cd0ca4f"
 
   url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-tibetan-#{version}-universal.pkg"
   name "MSIME Tibetan"
