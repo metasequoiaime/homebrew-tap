@@ -1,7 +1,7 @@
 # Casks/msime-pinyin.rb in metasequoiaime/homebrew-tap, written by release-macos.yml; edit this template, not the tap.
 cask "msime-pinyin" do
-  version "0.59.3"
-  sha256 "74e927dd3906f1fd2af908fe4332323404e1860163916f427077c4d2fa6b2d91"
+  version "0.59.4"
+  sha256 "b6ab818098a8298cb7137e417f5f81b0b384b9079b0832d8b130a0bd8c6bcb8f"
 
   url "https://github.com/metasequoiaime/msime/releases/download/macos-v#{version}/msime-macos-pinyin-#{version}-universal.pkg"
   name "MSIME Pinyin"
